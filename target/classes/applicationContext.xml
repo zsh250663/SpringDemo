@@ -1,0 +1,62 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- setter方式注入 -->
+    <!-- <bean id="mybook" class="com.zsh.yhd.SpringProject.Book">
+		<property name="bookName" value="码农的一生"></property>
+	</bean> -->
+	
+	<!-- 利用构造方式注入 -->
+	<!-- <bean id="mybook" class="com.zsh.yhd.SpringProject.Book">
+		隐形赋值
+		<constructor-arg index="0" value="C++从入门到放弃"></constructor-arg>
+		
+		显性设置
+		<constructor-arg name="" value="C++从入门到放弃"></constructor-arg>
+	</bean> -->
+	
+	<!-- setter方式注入 -->
+	<bean id="myStudent" class="com.zsh.yhd.SpringProject.Student">
+		<property name="age" value="19"></property>
+		<property name="name" value="zsh"></property>
+		<property name="cources">
+			<list>
+				<value>语文</value>
+				<value>数学</value>
+				<value>英语</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 利用构造方式注入 -->
+	<!-- <bean id="myStudent" class="com.zsh.yhd.SpringProject.Student">
+		隐形赋值
+		<constructor-arg index="0" value="22"></constructor-arg>
+		<constructor-arg index="1" value="xyp"></constructor-arg>
+		<constructor-arg index="2">
+			<list>
+				<value>语文</value>
+				<value>数学</value>
+				<value>英语</value>
+			</list>
+		</constructor-arg>
+		
+		显性设置
+		<constructor-arg name="age" value="22"></constructor-arg>
+		<constructor-arg name="name" value="xyp2"></constructor-arg>
+		<constructor-arg name="cources">
+			<list>
+				<value>语文</value>
+				<value>数学</value>
+				<value>英语</value>
+			</list>
+		</constructor-arg>
+	</bean> -->
+	
+	<context:annotation-config />
+	<context:component-scan base-package="com.zsh.yhd.SpringProject" />
+</beans>
